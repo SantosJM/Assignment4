@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment 4: OOP</title>
+    <meta charset="UTF-8">
+
+    <script>
+// ================ Practice with Javascript OOP ================= //
+
+        //1
+        /*
+        var ANIMAL = ANIMAL || {};
+        ANIMAL.Cat = function() {
+
+        }
+        ANIMAL.Dog = function() {
+
+        }
+        */
+
+        //2
+        /*
+        function Cat() {
+
+        }
+        var Dog = function() {
+
+        }
+        */
+
+
+        //3
+        /*
+        function Cat() {
+
+        }
+        var Dog = function() {
+
+        }
+        var myCat = new Cat();
+        var myDog = new Dog();
+        */
+
+
+        //4
+        /*
+        function Animal() {
+            console.log("The Animal has been created");
+        }
+        var giraffe = new Animal();
+        */
+
+
+        //5
+        /*
+        function Animal(param1) {
+            console.log(param1);
+        }
+        var giraffe = new Animal("The Animal has been created.");
+        */
+
+
+        //6
+        /*
+        function Animal(init_type, init_breed, init_color, init_height, init_length) {
+            this.type = init_type;
+            this.breed = init_breed;
+            this.color = init_color;
+            this.height = init_height;
+            this.length = init_length;
+        }
+        var giraffe = new Animal("giraffe", "wild", "yellow", 25, 10);
+        */
+
+
+        //7
+        /*
+        function Animal(init_type, init_breed, init_color, init_height, init_length) {
+            this.type = init_type;
+            this.breed = init_breed;
+            this.color = init_color;
+            this.height = init_height;
+            this.length = init_length;
+        }
+        var giraffe = new Animal("giraffe", "wild", "yellow", 25, 10);
+        for (var i in giraffe) {
+            console.log(i + " : " + giraffe[i]);
+        }
+        */
+
+
+        //8
+        /*
+        function Animal(init_type, init_breed, init_color, init_height, init_length) {
+            this.type = init_type;
+            this.breed = init_breed;
+            this.color = init_color;
+            this.height = init_height;
+            this.length = init_length;
+        }
+        Animal.prototype.speak = function() {
+            if (this.type.toLowerCase() === "dog") {
+                return "The " + this.color.toLowerCase() + " dog is barking!";
+            } else {
+                return "The " + this.color.toLowerCase() + " cat is meowing!";
+            }
+        }
+
+        var dog = new Animal("dog", "french bulldog", "fawn", 1, 2);
+        console.log(dog.speak());
+        */
+
+
+        //9
+        /*
+        function Animal(init_type, init_breed, init_color, init_height, init_length) {
+            var type = init_type;
+            var breed = init_breed;
+            var color = init_color;
+            var height = init_height;
+            var length = init_length;
+            var checkType = function() {
+                if (type.toLowerCase() === "dog") {
+                    return "dog";
+                } else {
+                    return "cat";
+                }
+            }
+            this.speak = function () {
+                return checkType();
+            }
+        }
+        var animal = new Animal("dog", "french bulldog", "fawn", 1, 2);
+        console.log("The " + animal.speak() + " has made a noise!");
+        */
+
+
+        //10
+        /*
+        String.prototype.findWords = function(word) {
+            var paragraph = [];
+            var instances = 0;
+            paragraph = this.split(" ");
+            for (var i = 0; i < paragraph.length; i++) {
+                if (paragraph[i].toLowerCase() === word.toLowerCase()) {
+                    instances += 1;
+                }
+            }
+            return instances;
+        }
+        var text = "lorem ipsum lorem ipsum lorem ipsum sum sum sum javascript lorem ipsum lorem ipsum lorem ipsum sum sum sum javascript lorem ipsum lorem ipsum lorem ipsum sum sum sum javascript rocks!";
+
+        console.log(text.findWords("javascript"));
+        */
+
+
+// =========================== OIL CHANGE ======================//
+
+        //11 & //12
+/*
+         var Vehicle = function(init_make, init_model, init_totalMiles, init_lastOilChange) {
+             this.make = init_make;
+             this.model = init_model;
+             this.totalMiles = init_totalMiles;
+             this.drivenMiles = 0;
+             this.type = "";
+             this.lastOilChange = init_lastOilChange;
+        }
+
+
+         //13
+
+         Vehicle.prototype.drive = function(miles) {
+             this.drivenMiles += miles;
+             return this;
+         }
+
+
+         //14
+
+         Vehicle.prototype.checkOil = function() {
+             if (this.totalMiles - this.lastOilChange + this.drivenMiles >= 3000) {
+                 return "you need an oil change, bruh!";
+             } else {
+                 return this;
+             }
+         }
+
+
+        //15 & //16 & //17
+
+        var Car = function(doorCount) {
+            this.doorCount = doorCount;
+            if (this.doorCount > 2) {
+                this.type = "Sedan";
+            } else {
+                this.type = "Coupe";
+            }
+        }
+
+
+        //18
+         Car.prototype = new Vehicle("Toyota", "FJ Cruiser", 135000, 133000);
+
+
+        //19
+         var myCar = new Car(4);
+
+
+        //20
+        console.log(myCar.drive(10).checkOil());
+*/
+
+
+
+// ============================ RECIPE ============================//
+
+        /*
+        var favRecipe = {
+            title: "Guacamole",
+            servings: 4,
+            ingredients: ["3 Avocados", "1 Lime", "1 Teaspoon Salt", "1/2 Cup Onion", "3 Tablespoons Cilantro", "2 Diced Tomatoes", "1 Teaspoon Garlic", "1 Pinch Ground Pepper"]
+            };
+
+            console.log(favRecipe.title);
+            console.log("Serves: " + favRecipe.servings);
+            console.log("Ingredients: ");
+            for (var i = 0; i < favRecipe.ingredients.length; i++) {
+                console.log(favRecipe.ingredients[i]);
+            }
+        */
+
+
+// ===================== READING LIST ===========================//
+        /*
+        var books = [
+            {title: "Don't Make Me Think", author: "Steve Krug", read: true},
+            {title: "The Art of Looking Sideways", author: "Alen Fletcher", read: true},
+            {title: "The Adventures of Cavalier & Clay", author: "Michael Chibon", read: true},
+            {title: "In the First Circle", author: "Aleksandr Solzhenitsyn", read: true},
+            {title: "High Fidelity", author: "Nick Hornby", read: false}
+        ];
+
+        for (var i = 0; i < books.length; i++) {
+            var book = books[i];
+            var bookInfo = book.title + " by " + book.author;
+            if (book.read) {
+                console.log("You've already read " + bookInfo);
+            } else {
+                console.log("Dude bro! You need to read " + bookInfo);
+            }
+        }
+        */
+
+
+
+//====================== FILL IN THE BLANK ======================
+
+        /*
+        (function () {
+
+            var person = {
+                buy: function() {
+                    console.log("I'm rich, betch!");
+                }
+            };
+
+            var car = {
+                drive: function() {
+                    console.log("vroom vroom");
+                },
+                price: 99999
+            };
+
+            // print vroom vroom
+            car.drive();
+
+            // print "I'm rich, betch!"
+            if (car.price > 100000) {
+                person.buy(car);
+            }
+        }());
+
+        */
+
+
+    </script>
+
+</head>
+<body>
+    <h1>Assignment 4: You down with OOP?!?! </h1>
+    <h2>Yeah, you know me!!</h2>
+</body>
+</html>
